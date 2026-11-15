@@ -1,0 +1,13 @@
+{
+  "name": "epakce-rest-api",
+  "version": "1.0.0",
+  "description": "Epakçe Oyun Epin Fiyat Karşılaştırma & REST API Platformu (Yalova Üni. KB 206 Programlama)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.2.1"
+  }
+}

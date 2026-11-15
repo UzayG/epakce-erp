@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Epakçe SRE & KPI Panosu</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Epakçe SRE & Hizmet Seviyesi (SLO / SLI) Panosu</h1>
+        <div class="kpi-grid">
+            <div class="kpi-card"><h3>Erişilebilirlik (SLI)</h3><p class="val">%99.96</p><small>Hedef: %99.95</small></div>
+            <div class="kpi-card"><h3>Kalan Hata Bütçesi</h3><p class="val">5.16 dk</p><small>28 günlük pencere</small></div>
+            <div class="kpi-card"><h3>Ortalama Yanıt</h3><p class="val">42 ms</p><small>p99: 110 ms</small></div>
+        </div>
+        <div class="chart-box">
+            <canvas id="sliChart"></canvas>
+        </div>
+    </div>
+    <script>
+        const ctx = document.getElementById('sliChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Hafta 1', 'Hafta 2', 'Hafta 3', 'Hafta 4'],
+                datasets: [{
+                    label: 'API Yanıt Süresi (ms)',
+                    data: [45, 38, 42, 40],
+                    borderColor: '#4CAF50',
+                    fill: false
+                }]
+            }
+        });
+    </script>
+</body>
+</html>
